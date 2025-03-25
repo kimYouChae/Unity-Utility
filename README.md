@@ -32,3 +32,16 @@
 
 #### UIManager 관련 글 
 - <a href="https://youcheachae.tistory.com/63" > 말하는감자의 공부기록 - [Unity] 팝업을 관리하는 Manager </a>
+
+<br>
+
+## 4. Extension (확장메서드)
+확장메서드를 관리하는 스크립트
+
+#### 확장메서드 관련 글 
+- <a href="https://youcheachae.tistory.com/66" > 말하는감자의 공부기록 - [Unity] 확장메서드 </a>
+
+<br>
+
+## 5. ResourceUtility
+리소스 로더의 기능을 담아놓은 스크립트
