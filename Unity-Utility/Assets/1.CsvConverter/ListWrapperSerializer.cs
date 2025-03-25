@@ -11,7 +11,7 @@ public class ListWrapper<T>
     public List<T> values;
 }
 
-public class JsonSerialized 
+public class ListWrapperSerializer 
 {
     // C:\Users\[user name]\AppData\LocalLow\[company name]\[product name]
     static string savePath = Application.persistentDataPath;

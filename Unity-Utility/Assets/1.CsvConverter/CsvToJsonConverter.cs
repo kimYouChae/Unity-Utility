@@ -72,10 +72,10 @@ public static class CsvToJsonConverter
                 object dataArray = method.Invoke(converterInstance, null);
 
                 // 원본 타입을 유지한 채 JSON으로 변환
-                string json = JsonSerialized.ConvertOriginalListToJson(dataArray, type);
+                string json = ListWrapperSerializer.ConvertOriginalListToJson(dataArray, type);
 
                 // 파일로 저장
-                JsonSerialized.SaveJsonToFile(json, className[i]);
+                ListWrapperSerializer.SaveJsonToFile(json, className[i]);
 
                 Debug.Log($"{className[i]} 데이터를 성공적으로 변환했습니다.");
             }
