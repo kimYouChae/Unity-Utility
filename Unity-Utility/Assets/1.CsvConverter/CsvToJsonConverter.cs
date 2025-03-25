@@ -11,7 +11,7 @@ public interface ICsvParsable
 
 }
 
-public class CsvToJsonConverter : MonoBehaviour
+public static class CsvToJsonConverter
 {
     /// <summary>
     /// ***Converter 사용 전 주의사항***
@@ -24,16 +24,17 @@ public class CsvToJsonConverter : MonoBehaviour
     ///
     /// </summary>
 
-    [Header("===클래스 이름을 작성해주세요===")]
-    public string[] className;
-    public Dictionary<string, string> jsonResults = new Dictionary<string, string>();
 
-    public void CsvConverByName()
+    public static void CsvConverByName(List<string> className)
     {
-        Debug.Log("CsvConverter메서드입니다");
+        // Debug.Log("CsvConverter메서드입니다");
 
-        for (int i = 0; i < className.Length; i++)
+        for (int i = 0; i < className.Count; i++)
         {
+            // (에외) 비어있으면
+            if (className[i] == string.Empty)
+                return;
+
             // 여기서 type은 ? 클래스라고 생각하면 편함 
             // string에 맞는 타입 생성 
             Type type = Type.GetType(className[i]);
@@ -72,9 +73,6 @@ public class CsvToJsonConverter : MonoBehaviour
 
                 // 원본 타입을 유지한 채 JSON으로 변환
                 string json = JsonSerialized.ConvertOriginalListToJson(dataArray, type);
-
-                // 결과 저장
-                jsonResults[className[i]] = json;
 
                 // 파일로 저장
                 JsonSerialized.SaveJsonToFile(json, className[i]);
