@@ -99,7 +99,7 @@ public class UIManager : MonoBehaviour
         {
             popupInstance = Instantiate(upPrefab, canvas.transform);
         }
-        catch (Exception e) { Debug.Log($"UIManager : {upPrefab.name} 프리팹 생성 오류 "); }
+        catch (Exception e) { Debug.Log($"UIManager : {upPrefab.name} 프리팹 생성 오류 {e}"); }
 
         // 리스트에 넣은 후 return 
         return AddtoPopUpList(popupInstance);
@@ -113,7 +113,7 @@ public class UIManager : MonoBehaviour
         {
             uiPopUp = instance.GetComponent<UiPopUp>();
         }
-        catch (Exception e) { Debug.Log($"UIManager : {instance.name} 프리팹에서 GetComponent 오류 "); }
+        catch (Exception e) { Debug.Log($"UIManager : {instance.name} 프리팹에서 GetComponent 오류 {e}"); }
 
         // 항상 첫번째로 들어가게 insert
         popUps.Insert(0, uiPopUp);
