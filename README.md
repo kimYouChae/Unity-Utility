@@ -45,3 +45,8 @@
 
 ## 5. ResourceUtility
 리소스 로더의 기능을 담아놓은 스크립트
+
+<br>
+
+## 6. Singleton 상속
+상속을 사용한 싱글톤 코드 
